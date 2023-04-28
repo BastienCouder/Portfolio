@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  height: auto;
+}
+
+.body-active {
+  overflow-y: hidden;
+}
+::selection {
+  background: transparent;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+:root {
+  --primary-color: #000000;
+  --second-color: #cdbab1;
+  --error-color: #f14040;
+  --titre: "Montserrat";
+  --text: "Montserrat";
+  --translateX: 0px;
+  --translateY: 0px;
+}
