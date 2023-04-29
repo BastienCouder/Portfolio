@@ -5,15 +5,14 @@
 }
 
 body {
+  position: relative;
   background-color: #fff;
   margin: 0;
   padding: 0;
   width: 100vw;
   height: auto;
 }
-.overflow {
-  overflow-x: hidden;
-}
+
 .body-active {
   overflow-y: hidden;
 }

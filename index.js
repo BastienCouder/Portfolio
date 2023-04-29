@@ -3,11 +3,25 @@ let textAnim = document.querySelector("h1");
 let line = document.querySelector(".line");
 let border = document.querySelector(".bloc2");
 let buttons = document.querySelectorAll("button");
-let cubes = document.querySelectorAll(".cube");
 
+let cubes = document.querySelectorAll(".cube");
 let root = document.querySelector(":root");
-let rootStyles = getComputedStyle(root);
-let translateX = rootStyles.getPropertyValue("--translateX");
+
+cubes.forEach((cube, i) => {
+  let a = Math.random() * (100 - -100) + -100;
+  a = parseInt(a);
+  let b = Math.random() * (100 - -100) + -100;
+  b = parseInt(b);
+  console.log(a, b);
+  cube.classList.add(`cube-${i}`);
+  cube.dataset.translateX = `${a}%`;
+  cube.dataset.translateY = `${b}%`;
+});
+
+cubes.forEach((cube) => {
+  cube.style.setProperty(`--translateX`, cube.dataset.translateX);
+  cube.style.setProperty(`--translateY`, cube.dataset.translateY);
+});
 
 // a = Math.random() * (100 - 0) + 0;
 // a = parseInt(a);
@@ -26,21 +40,21 @@ setTimeout(() => {
   line.classList.add("active-line");
 }, 3500);
 
-function bloquerScroll(duree) {
-  // Désactive le défilement
-  document.body.style.overflow = "hidden";
+// function bloquerScroll(duree) {
+//   // Désactive le défilement
+//   document.body.style.overflow = "hidden";
 
-  // Réactive le défilement après la durée spécifiée
-  setTimeout(function () {
-    document.body.style.overflow = "auto";
-  }, duree);
-}
+//   // Réactive le défilement après la durée spécifiée
+//   setTimeout(function () {
+//     document.body.style.overflow = "auto";
+//   }, duree);
+// }
 
-bloquerScroll(3700);
+// bloquerScroll(3700);
 
-function blockScroll() {
-  stopScroll = false;
-}
+// function blockScroll() {
+//   stopScroll = false;
+// }
 setTimeout(() => {
   border.classList.add("border");
 }, 4000);

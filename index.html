@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
 
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="style.css" />
@@ -15,22 +15,25 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
     <title>Portfolio</title>
   </head>
   <body >
     <div class="home">
       <div class="loading-container">
         <div class="loading-text">
-          <span>L</span>
-          <span>O</span>
+          <span>C</span>
+          <span>H</span>
           <span>A</span>
-          <span>D</span>
-          <span>I</span>
-          <span>N</span>
+          <span>R</span>
           <span>G</span>
+          <span>E</span>
+          <span>M</span>
+          <span>E</span>
+          <span>N</span>
+          <span>T</span>
         </div>
       </div>
+      <div class="form-validate"></div>
       <div class="block">
         <div class="cube" ></div>
         <div class="cube"></div>
@@ -72,7 +75,7 @@
         <div class="card">
             <img src="" alt="">
             <p></p>
-     <button class="but">Voir mon CV </button>
+     <a href="cv/CV.html" target="_blank"><button class="but">Voir mon CV </button></a>
      <button>Contactez-moi</button>
 
         </div>
@@ -281,6 +284,15 @@
         </div>
       </div>
     </div>
+    <div class="component5">
+      <div class="projets">
+        <div class="card-projet"><h2>Projet 1</h2></div>
+        <div class="card-projet"><h2>Projet 2</h2></div>
+        <div class="card-projet"><h2>Projet 3</h2></div>
+        <div class="card-projet"><h2>Projet 4</h2></div>
+        <div class="card-projet"><h2>Projet 5</h2></div>
+      </div>
+    </div>
     <div class="component4">
       <div class="space" id="formu">
       <div class="contain" id="container">
@@ -340,31 +352,38 @@
           </form>
         </div>
       </div>
+      <div class="media">
+        <h2>Mes réseaux</h2>
+        <div class="icono">
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </div>
     </div>
 
-<script>let loader = document.querySelector(".loading-container");
+<script>
+window.addEventListener('beforeunload', function() {
+  window.scrollTo(0, 0);
+});
+
+let loader = document.querySelector(".loading-container");
   let textAnim = document.querySelector("h1");
   let line = document.querySelector(".line");
   let border = document.querySelector(".bloc2");
   let buttons = document.querySelectorAll("button");
+  
   let cubes = document.querySelectorAll(".cube");
-  
-  let root = document.querySelector(":root");
-  let rootStyles = getComputedStyle(root);
-  let translateX = rootStyles.getPropertyValue("--translateX");
-  
-  // a = Math.random() * (100 - 0) + 0;
-  // a = parseInt(a);
-  // b = Math.random() * (100 - 0) + 0;
-  // b = parseInt(b);
-  // console.log(a, b);
-  // cubes.forEach((cube) => {
-  //   root.style.setProperty("--translateX", `${a}%`); // set the value of "--translateX" property on the root element
-  // });
-  
-  addEventListener("mouseenter", () => {
-    console.log("click");
-  });
+let root = document.querySelector(":root");
+
+cubes.forEach((cube) => {
+  let a = Math.random() * (100 - -100) + -100;
+  a = parseInt(a);
+  let b = Math.random() * (100 - -100) + -100;
+  b = parseInt(b);
+  console.log(a, b);
+  cube.style.setProperty(`--translateX`, `${a}%`);
+  cube.style.setProperty(`--translateY`, `${b}%`);
+});
   
   setTimeout(() => {
     line.classList.add("active-line");
@@ -381,7 +400,7 @@
     }, duree);
   }
   
-  bloquerScroll(3700);
+  bloquerScroll(4700);
   
   function blockScroll() {
     stopScroll = false;
@@ -421,19 +440,19 @@
     )
     .start();
   
-  const cards = document.querySelectorAll(".card");
+  // const cards = document.querySelectorAll(".card");
   
-  cards.forEach((card) => {
-    card.addEventListener("mouseover", () => {
-      const paragraphe = card.querySelector("p");
-      paragraphe.classList.add("active");
-    });
+  // cards.forEach((card) => {
+  //   card.addEventListener("mouseover", () => {
+  //     const paragraphe = card.querySelector("p");
+  //     paragraphe.classList.add("active");
+  //   });
   
-    card.addEventListener("mouseout", () => {
-      const paragraphe = card.querySelector("p");
-      paragraphe.classList.remove("active");
-    });
-  });
+  //   card.addEventListener("mouseout", () => {
+  //     const paragraphe = card.querySelector("p");
+  //     paragraphe.classList.remove("active");
+  //   });
+  // });
   
   window.addEventListener("scroll", () => {
     console.log(window.scrollY);
@@ -453,6 +472,43 @@
       formu.classList.add("space-active");
     }
   });
+
+  
+const cards = document.querySelectorAll(".card-projet");
+const titres = document.querySelectorAll("h2");
+
+function addClasses(card) {
+  card.classList.add("hover-card");
+  cards.forEach((otherCard) => {
+    if (otherCard !== card) {
+      otherCard.classList.add("blur-card");
+    }
+  });
+}
+
+function removeClasses(card) {
+  card.classList.remove("hover-card", "active-card");
+  const titre = card.querySelector("h2");
+  titre.classList.remove("hover-titre");
+  cards.forEach((otherCard) => {
+    if (otherCard !== card) {
+      otherCard.classList.remove("blur-card");
+    }
+  });
+}
+
+function activateCard(card) {
+  card.classList.add("active-card");
+  const titre = card.querySelector("h2");
+  titre.classList.add("hover-titre");
+}
+
+cards.forEach((card) => {
+  card.addEventListener("mouseenter", () => addClasses(card));
+  card.addEventListener("mouseleave", () => removeClasses(card));
+  card.addEventListener("click", () => activateCard(card));
+});
+
   </script>
 
 
@@ -466,6 +522,7 @@
   const select = document.querySelector("select");
   const button = document.querySelector("button");
   const left = document.querySelector(".left");
+  const formValidate = document.querySelector('.form-validate');
   
   //Déclarations Messages d'erreurs
   const [small1, small2, small3, small4, small5] =
@@ -518,9 +575,8 @@
       small5.classList.contains("active")
     ) {
     } else {
-      window.location.href = "config.php";
-    }
-  });
+      formValidate.classList.add('active-form-validate');
+  }});
   
   //Fonction from verify
   function form_verify() {
