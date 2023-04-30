@@ -168,6 +168,11 @@
     left: 100px;
   }
 }
+@media screen and (max-width: 398px) {
+  .line {
+    left: 70px;
+  }
+}
 .active-line {
   transition: 1s ease-in-out;
   height: 250px;
@@ -263,8 +268,8 @@ h1 {
   left: 10%;
 }
 .block .cube:nth-child(11) {
-  width: clamp(150px, 10vw, 180px);
-  height: clamp(150px, 10vw, 180px);
+  width: clamp(120px, 10vw, 160px);
+  height: clamp(120px, 10vw, 160px);
   top: 75%;
   left: 45%;
 }
@@ -279,14 +284,8 @@ h1 {
   }
 }
 @media screen and (max-width: 768px) {
-  .block .cube:nth-child(8) {
+  .block .cube:nth-child(8), .block .cube:nth-child(2) {
     display: none;
-  }
-}
-@media screen and (max-width: 480px) {
-  .block .cube .card-projet {
-    height: 200px;
-    margin: 0 2px;
   }
 }
 
@@ -329,19 +328,45 @@ h1 {
   width: 70px;
   height: 70px;
   background-color: #cdbab1;
-  transform: rotate(15deg);
 }
 .component2 .left-active {
   opacity: 1;
   transition: 1.2s ease-in-out;
   transform: translateY(-100px);
 }
+@media screen and (max-width: 1268px) {
+  .component2 .left {
+    width: 120px;
+  }
+}
+@media screen and (max-width: 968px) {
+  .component2 .left {
+    width: 140px;
+  }
+}
+@media screen and (max-width: 638px) {
+  .component2 .left {
+    width: 70px;
+  }
+}
+@media screen and (max-width: 398px) {
+  .component2 .left {
+    width: 20px;
+  }
+}
 
+@media screen and (max-width: 968px) {
+  .component2 {
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
+}
 .txt {
   transform: translateY(200px);
   opacity: 0;
   display: flex;
   margin-left: 17vw;
+  justify-content: flex-start;
   flex-direction: column;
   width: 70%;
   height: 100%;
@@ -352,7 +377,7 @@ h1 {
   font-size: 3.2em;
 }
 .txt p {
-  margin: 20px 0vw 0 0px;
+  margin-top: 20px;
   padding-right: 200px;
   font-size: 1.05em;
   line-height: 20px;
@@ -367,6 +392,7 @@ h1 {
     font-size: 2.5em;
   }
   .txt p {
+    margin-top: 10px;
     padding-right: 50px;
     font-size: 0.95em;
   }
@@ -380,13 +406,26 @@ h1 {
   }
 }
 
+@media screen and (max-width: 398px) {
+  p {
+    padding-right: 0px;
+  }
+}
 @media screen and (max-width: 968px) {
   .component2 {
     align-items: flex-end;
     flex-direction: column-reverse;
   }
+}
+@media screen and (max-width: 968px) {
   .txt {
-    margin-top: -150px;
+    margin-top: -180px;
+  }
+}
+@media screen and (max-width: 398px) {
+  .txt {
+    margin-right: -20px;
+    width: 80%;
   }
 }
 .active-about {
@@ -436,10 +475,10 @@ h1 {
   align-items: center;
   width: clamp(100px, 50%, 180px);
   margin-top: 20px;
-  font-size: clamp(0.9em, 2vw, 1.05em);
+  font-size: clamp(0.8em, 3vw, 1.05em);
   padding: 10px 15px;
   background: transparent;
-  margin-left: 40px;
+  margin-left: clamp(20px, 4vw, 40px);
   border: 3px solid #cdbab1;
 }
 .bloc2 .card button:hover {
@@ -448,13 +487,14 @@ h1 {
 }
 @media screen and (max-width: 968px) {
   .bloc2 .card {
-    transform: translate(-50px, 50px);
+    transform: translate(-50px, 40px);
   }
 }
 
 @media screen and (max-width: 968px) {
   .bloc2 {
     width: 60%;
+    height: 50vh;
   }
 }
 .border {
