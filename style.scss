@@ -1,6 +1,5 @@
 .form-validate {
   transform: translateY(-100vh);
-
   z-index: 5;
   position: fixed;
   display: flex;
@@ -34,8 +33,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #cdbab1;
-  background-color: #fff;
+  color: var(--second-color);
+  background-color: var(--white);
   position: absolute;
   margin: 0 32px;
   opacity: 1;
@@ -92,7 +91,7 @@
     position: relative;
     display: inline-block;
     opacity: 0;
-    text-shadow: 0px 2px 10px #ececec;
+    text-shadow: 0px 2px 10px var(--third-color);
   }
 }
 .fondu {
@@ -126,36 +125,28 @@
 .line {
   height: 0;
   width: 7px;
-  background-color: #232323;
+  background-color: var(--primary-color);
   position: absolute;
   top: 0;
   left: 280px;
-}
-@media screen and (max-width: 1268px) {
-  .line {
+
+  @media screen and (max-width: 1268px) {
     left: 170px;
   }
-}
-@media screen and (max-width: 968px) {
-  .line {
+  @media screen and (max-width: 968px) {
     left: 150px;
   }
-}
-
-@media screen and (max-width: 568px) {
-  .line {
+  @media screen and (max-width: 568px) {
     left: 100px;
   }
-}
-
-@media screen and (max-width: 398px) {
-  .line {
+  @media screen and (max-width: 398px) {
     left: 70px;
   }
-}
-.active-line {
-  transition: 1s ease-in-out;
-  height: 250px;
+
+  &.active-line {
+    transition: 1s ease-in-out;
+    height: 250px;
+  }
 }
 
 .container {
@@ -167,49 +158,39 @@
   z-index: 2;
   font-family: "Montserrat";
   font-weight: 700;
-}
 
-h1 {
-  width: auto;
-  font-size: 4.2em;
-  line-height: clamp(35px, 6vw, 65px);
-  color: #232323;
-}
-@media screen and (max-width: 968px) {
   h1 {
-    font-size: 3.5em;
-  }
-}
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 3.1em;
-  }
-}
-@media screen and (max-width: 568px) {
-  h1 {
-    font-size: 2.5em;
-  }
-}
-@media screen and (max-width: 428px) {
-  h1 {
-    font-size: 2.2em;
-  }
-}
-@media screen and (max-width: 358px) {
-  h1 {
-    font-size: 2em;
-  }
-}
+    width: auto;
+    font-size: 4.2em;
+    line-height: clamp(35px, 6vw, 65px);
+    color: var(--primary-color);
 
+    @media screen and (max-width: 968px) {
+      font-size: 3.5em;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 3.1em;
+    }
+    @media screen and (max-width: 568px) {
+      font-size: 2.5em;
+    }
+    @media screen and (max-width: 428px) {
+      font-size: 2.2em;
+    }
+    @media screen and (max-width: 358px) {
+      font-size: 2em;
+    }
+  }
+}
 .block {
   width: 100vw;
-  top: 0;
   height: 100vh;
+  top: 0;
   position: absolute;
 
   .cube {
-    background-color: #cdbab1;
     position: absolute;
+    background-color: var(--second-color);
     animation: moving 20s linear infinite;
 
     &:nth-child(1) {
@@ -281,16 +262,12 @@ h1 {
       top: 55%;
       left: 10%;
     }
+
     &:nth-child(11) {
-      width: clamp(120px, 10vw, 160px);
-      height: clamp(120px, 10vw, 160px);
-      top: 75%;
+      width: clamp(120px, 10vw, 140px);
+      height: clamp(120px, 10vw, 140px);
+      top: 72%;
       left: 45%;
-    }
-    @media screen and (max-width: 1268px) {
-      &:nth-child(5) {
-        display: none;
-      }
     }
     @media screen and (max-width: 968px) {
       &:nth-child(11) {
@@ -298,12 +275,12 @@ h1 {
       }
     }
     @media screen and (max-width: 768px) {
-      &:nth-child(8),
-      &:nth-child(2) {
+      &:nth-child(2),
+      &:nth-child(5),
+      &:nth-child(8) {
         display: none;
       }
     }
-
     @media screen and (max-width: 398px) {
       &:nth-child(1) {
         display: none;
@@ -341,7 +318,7 @@ h1 {
     content: "";
     width: 120px;
     height: 600px;
-    border: #232323 solid 4px;
+    border: var(--primary-color) solid 4px;
     border-left: none;
     transform: translateY(300px);
     opacity: 0;
@@ -353,7 +330,7 @@ h1 {
       content: "";
       width: clamp(50px, 10vw, 70px);
       height: clamp(50px, 10vw, 70px);
-      background-color: #cdbab1;
+      background-color: var(--second-color);
     }
   }
 
@@ -469,7 +446,7 @@ h1 {
 .bloc2 {
   width: 30%;
   transform: translate(50vw, -30vh);
-  border: 8px solid #232323;
+  border: 8px solid var(--primary-color);
   border-right: none;
   height: 80vh;
 
@@ -479,15 +456,14 @@ h1 {
     height: 80%;
     display: flex;
     flex-direction: column;
-    background-color: #fcfcfc;
-    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
-      8px 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    box-shadow: -5px -5px 15px var(--box-shadow), 8px 8px 15px var(--box-shadow);
 
     &::after {
       content: "";
       width: clamp(60px, 4vw, 80px);
       height: clamp(60px, 4vw, 80px);
-      background-color: #cdbab1;
+      background-color: var(--second-color);
       top: 50px;
       right: -30px;
       position: absolute;
@@ -515,11 +491,11 @@ h1 {
       padding: 10px 15px;
       background: transparent;
       margin-left: clamp(20px, 4vw, 40px);
-      border: 3px solid #cdbab1;
+      border: 3px solid var(--second-color);
 
       &:hover {
-        background-color: #cdbab1;
-        color: #ffffff;
+        background-color: var(--second-color);
+        color: var(--white);
       }
     }
   }
@@ -543,8 +519,20 @@ h1 {
 }
 
 .component3 {
+  margin-top: -220px;
   height: auto;
   width: 100vw;
+}
+@media screen and (max-width: 1268px) {
+  .component3 {
+    margin-top: -200px;
+  }
+
+  @media screen and (max-width: 968px) {
+    .component3 {
+      margin-top: 40px;
+    }
+  }
 }
 
 @keyframes scroll {
@@ -558,10 +546,10 @@ h1 {
 
 @keyframes scroll2 {
   0% {
-    transform: translateX(35%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(135%);
+    transform: translateX(100%);
   }
 }
 
@@ -592,7 +580,7 @@ h1 {
   &::before {
     background: linear-gradient(
       to right,
-      rgb(255, 255, 255) 0%,
+      rgba(245, 245, 245, 1) 0%,
       rgba(255, 255, 255, 0) 100%
     );
     top: 0;
@@ -601,7 +589,7 @@ h1 {
   &::after {
     background: linear-gradient(
       to left,
-      rgb(255, 255, 255) 0%,
+      rgba(245, 245, 245, 1) 0%,
       rgba(255, 255, 255, 0) 100%
     );
     top: 0;
@@ -615,29 +603,25 @@ h1 {
   .slide2 {
     animation: scroll2 30s linear infinite;
     flex-direction: row-reverse;
+    margin-left: 500px;
   }
 
   .slide-track {
     display: flex;
     width: calc(260px * 4);
 
-    // &:hover {
-    //   animation-play-state: paused;
-    // }
-
     .card {
       cursor: default;
       position: relative;
-      min-width: 190px;
+      min-width: clamp(100px, 50%, 190px);
       min-height: 180px;
       margin-inline: 35px;
-      background-color: #ffffff;
+      background-color: var(--white);
       display: flex;
       flex-direction: column;
       align-items: center;
       padding-top: 20px;
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1),
-        5px 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 15px var(--box-shadow), 5px 5px 15px var(--box-shadow);
 
       span {
         position: absolute;
@@ -646,26 +630,8 @@ h1 {
         z-index: 5;
         width: 30px;
         height: 30px;
-        background-color: #cdbab1;
+        background-color: var(--second-color);
       }
-
-      // p {
-      //   font-family: "Montserrat";
-      //   font-weight: 400;
-      //   font-size: 0.85em;
-      //   line-height: 20px;
-      //   transform: translate(25px, -65px);
-      //   width: 60%;
-      //   z-index: 3;
-      //   opacity: 0;
-      //   transition: 0.2s linear;
-      // }
-      // .active {
-      //   z-index: 5;
-      //   opacity: 1;
-      //   transition: 2.2s ease-in-out;
-      // }
-
       &::after {
         content: "";
         position: absolute;
@@ -673,7 +639,7 @@ h1 {
         bottom: 0;
         width: 40px;
         height: 40px;
-        background-color: #cdbab1;
+        background-color: var(--second-color);
         border-radius: 50px 0 0;
         transition: 0.5s ease-in-out;
       }
@@ -685,67 +651,15 @@ h1 {
         bottom: 20px;
         width: 50px;
         height: 50px;
-        background-color: #cdbab1;
+        background-color: var(--second-color);
         border-radius: 0;
         transition: 0.5s ease-in-out;
       }
-
-      // &:hover::after {
-      //   width: 80%;
-      //   height: 160px;
-      //   border-radius: 25px 0 0;
-      // }
-
-      // &:hover > img {
-      //   height: 80px;
-      //   width: auto;
-      //   transition: 0.5s ease-in-out;
-      // }
-
-      // &:hover > .html-css {
-      //   transform: translate(-57px, -20px);
-      // }
-
-      // &:hover > .javascript {
-      //   transform: translate(-62px, -20px);
-      // }
-
-      // &:hover > .php {
-      //   transform: translate(-38px, -20px);
-      // }
-
-      // &:hover > .sql {
-      //   transform: translate(-40px, -20px);
-      // }
-
-      // &:hover > .sass {
-      //   transform: translate(-50px, -20px);
-      // }
-
-      // &:hover > .wordpress {
-      //   transform: translate(-60px, -20px);
-      // }
-
-      // &:hover > .figma {
-      //   transform: translate(-55px, -20px);
-      // }
-
-      // &:hover > .react {
-      //   transform: translate(-58px, -20px);
-      // }
-
-      // &:hover > h2 {
-      //   z-index: 2;
-      //   transform: translate(60px, -115px);
-      //   font-size: 1.1em;
-      //   transition: 0.5s ease-in-out;
-      // }
-
       img {
         z-index: 2;
         height: 75px;
         width: auto;
-        background-color: #ffffff;
+        background-color: var(--white);
         padding: 15px;
         border-radius: 0 0 5px 0;
         transition: 0.5s ease-in-out;
@@ -783,12 +697,11 @@ h1 {
   .contain {
     transform: translate(50px, -60px);
     position: relative;
-    background-color: #fff;
+    background-color: var(--white);
     width: 100%;
     margin: auto;
     height: auto;
-    box-shadow: -8px -8px 15px rgba(0, 0, 0, 0.1),
-      5px 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: -8px -8px 15px var(--box-shadow), 5px 5px 15px var(--box-shadow);
 
     //Form
     form {
@@ -931,7 +844,7 @@ h1 {
             border: none;
             border: 3px solid var(--primary-color);
             border-radius: 5px;
-            color: #2d407f;
+            color: var(--primary-color);
             font-size: 0.9em;
             font-weight: 500;
             text-transform: capitalize;
@@ -965,7 +878,7 @@ h1 {
             display: grid;
             place-content: center;
             appearance: none;
-            background-color: #fff;
+            background-color: var(--white);
             font-size: 0.8em;
             color: var(--second-color);
             width: 1.15em;
@@ -999,7 +912,7 @@ h1 {
             width: 100%;
             font-size: 1em;
             background-color: var(--primary-color);
-            color: rgb(255, 255, 255);
+            color: var(--white);
             border-radius: 5px;
             border: none;
             height: 25px;
@@ -1101,7 +1014,7 @@ h1 {
   flex-direction: column;
 }
 .projets {
-  border: 5px solid black;
+  border: 5px solid var(--primary-color);
   border-right: none;
   padding: 5px 20px 0px 70px;
   width: 55%;
@@ -1146,7 +1059,7 @@ h1 {
     }
 
     h2 {
-      background-color: #cdbab1;
+      background-color: var(--second-color);
       font-family: var(--titre);
       height: 40px;
       width: 30%;
@@ -1154,7 +1067,7 @@ h1 {
       transform: translate(-100px, -40px);
       transition: 0.3s ease-in-out;
       opacity: 0;
-      color: aliceblue;
+      color: var(--white);
     }
     .hover-titre {
       transition: 0.5s ease-in-out;

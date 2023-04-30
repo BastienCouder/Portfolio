@@ -6,11 +6,12 @@
 
 body {
   position: relative;
-  background-color: #fff;
+  background-color: var(--white);
   margin: 0;
   padding: 0;
   width: 100vw;
   height: auto;
+  color: var(--primary-color);
 }
 
 .body-active {
@@ -25,8 +26,11 @@ body {
 }
 
 :root {
-  --primary-color: #000000;
+  --white: #fff;
+  --primary-color: #151515;
   --second-color: #cdbab1;
+  --third-color: #ececec;
+  --box-shadow: rgba(0, 0, 0, 0.1);
   --error-color: #f14040;
   --titre: "Montserrat";
   --text: "Montserrat";
