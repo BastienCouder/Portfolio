@@ -965,12 +965,18 @@
   flex-direction: column;
 }
 .component4 .media h2 {
-  padding-top: 15%;
+  padding-top: 150px;
   font-size: clamp(1.4em, 2vw, 1.7em);
 }
 @media screen and (max-width: 1268px) {
   .component4 .media h2 {
-    padding-top: 1%;
+    padding-top: 0px;
+  }
+}
+@media screen and (max-width: 468px) {
+  .component4 .media h2 {
+    margin-top: -60px;
+    padding-top: 0px;
   }
 }
 .component4 .media .icono {

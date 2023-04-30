@@ -1017,15 +1017,20 @@
     flex-direction: column;
 
     h2 {
-      padding-top: 15%;
+      padding-top: 150px;
       font-size: clamp(1.4em, 2vw, 1.7em);
     }
     @media screen and (max-width: 1268px) {
       h2 {
-        padding-top: 1%;
+        padding-top: 0px;
       }
     }
-
+    @media screen and (max-width: 468px) {
+      h2 {
+        margin-top: -60px;
+        padding-top: 0px;
+      }
+    }
     .icono {
       margin-top: 20px;
       font-size: 2em;
