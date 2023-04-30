@@ -681,6 +681,11 @@
   opacity: 0;
   transform: translate(-100px, 100px) scale(0.1);
 }
+@media screen and (max-width: 1268px) {
+  .component4 .space {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 968px) {
   .component4 .space {
     width: 80%;
@@ -695,6 +700,11 @@
   transition: 0.5s ease-in-out;
   opacity: 1;
   transform: translate(0px, -50px) scale(1);
+}
+@media screen and (max-width: 486px) {
+  .component4 .space-active {
+    transform: translate(0px, -100px) scale(1);
+  }
 }
 .component4 .contain {
   transform: translate(50px, -60px);
@@ -726,7 +736,7 @@
   font-family: var(--titre);
   font-size: clamp(1.4em, 2vw, 1.7em);
   color: var(--primary-color);
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 .component4 .contain form .formulaire {
   display: flex;
@@ -742,19 +752,21 @@
 .component4 .contain form .formulaire .inputBox select {
   width: 100%;
   border: none;
+  background: transparent;
   border-bottom: 3px solid var(--primary-color);
   color: var(--second-color);
-  font-size: 1em;
+  font-size: clamp(0.9em, 2vw, 1em);
   font-weight: 700;
   outline: none;
 }
 .component4 .contain form .formulaire .inputBox select:focus {
   border: none;
   border-bottom: 3px solid var(--primary-color);
+  font-size: clamp(0.9em, 2vw, 1em);
 }
 .component4 .contain form .formulaire .inputBox option {
   color: var(--primary-color);
-  font-size: 0.85em;
+  font-size: clamp(0.9em, 2vw, 1em);
   padding: 0;
 }
 .component4 .contain form .formulaire .inputBox input {
@@ -767,9 +779,9 @@
   background: none;
   border: none;
   border-bottom: 3px solid var(--primary-color);
-  font-size: 1em;
   font-weight: 500;
   outline: none;
+  font-size: clamp(0.9em, 2vw, 1em);
 }
 .component4 .contain form .formulaire .inputBox input:focus {
   border: none;
@@ -780,6 +792,7 @@
   font-size: 0.8em;
 }
 .component4 .contain form .formulaire .inputBox span {
+  font-size: clamp(0.9em, 2vw, 1em);
   color: var(--second-color);
   position: absolute;
   top: 0;
@@ -816,6 +829,7 @@
 }
 .component4 .contain form .formulaire .message span {
   color: var(--second-color);
+  font-size: clamp(0.9em, 2vw, 1em);
   padding-bottom: 5px;
 }
 .component4 .contain form .formulaire .message textarea {
@@ -847,7 +861,7 @@
 }
 .component4 .contain form .formulaire .rgpd span {
   font-family: var(--titre);
-  font-size: 0.8em;
+  font-size: clamp(0.7em, 2vw, 0.8em);
   color: var(--primary-color);
   -webkit-padding-start: 10px;
           padding-inline-start: 10px;
@@ -908,7 +922,7 @@
   visibility: hidden;
 }
 .component4 .contain form .small4 {
-  top: 21px;
+  top: 25px;
 }
 .component4 .contain form .small5 {
   top: 30px;
@@ -933,6 +947,11 @@
 }
 @media screen and (max-width: 698px) {
   .component4 .contain {
+    transform: translate(20px, -80px);
+  }
+}
+@media screen and (max-width: 486px) {
+  .component4 .contain {
     transform: translate(20px, -40px);
   }
 }
@@ -946,20 +965,23 @@
   flex-direction: column;
 }
 .component4 .media h2 {
-  padding-top: 7%;
+  padding-top: 15%;
   font-size: clamp(1.4em, 2vw, 1.7em);
 }
 .component4 .media .icono {
+  margin-top: 20px;
   font-size: 2em;
 }
+.component4 .media .icono i {
+  margin-right: 15px;
+}
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 1268px) {
   .component4 {
     margin-top: 200px;
-    background: red;
   }
 }
-@media screen and (max-width: 698px) {
+@media screen and (max-width: 1268px) {
   .component4 {
     flex-direction: column;
   }
@@ -981,15 +1003,17 @@
   padding: 5px 20px 0px 70px;
   width: 55%;
   display: flex;
-  height: 350px;
+  height: auto;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 10px;
   /* Media query pour les écrans plus petits (max-width: 480px) */
 }
 .projets .card-projet {
   transform: translateY(70px);
+  background-color: var(--second-color);
   padding: 20px;
-  height: 400px;
+  height: 350px;
   flex: 1;
   margin: 0 5px;
   transition: 0.2s ease-in-out;
@@ -997,31 +1021,26 @@
   filter: brightness(110%) contrast(110%) grayscale(100%);
 }
 .projets .card-projet:nth-child(1) {
-  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .projets .card-projet:nth-child(2) {
-  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .projets .card-projet:nth-child(3) {
-  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .projets .card-projet:nth-child(4) {
-  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .projets .card-projet:nth-child(5) {
-  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1043,16 +1062,23 @@
   opacity: 1;
   overflow: visible;
 }
+@media screen and (max-width: 1268px) {
+  .projets .card-projet {
+    transform: translateY(40px);
+  }
+}
 @media screen and (max-width: 768px) {
   .projets .card-projet {
-    height: 300px;
+    transform: translateY(20px);
     margin: 0 2.5px;
+    min-width: 100px;
   }
 }
 @media screen and (max-width: 480px) {
   .projets .card-projet {
-    height: 200px;
+    height: 300px;
     margin: 0 2px;
+    flex-wrap: wrap;
   }
 }
 .projets .card-projet.blur-card {
@@ -1068,8 +1094,24 @@
   flex: 10;
 }
 
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 1268px) {
+  .projets {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 968px) {
+  .projets {
+    width: 85%;
+    padding: 5px 20px 0px 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .projets {
     flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .projets {
+    padding: 5px 10px 0px 10px;
   }
 }/*# sourceMappingURL=style.css.map */

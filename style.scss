@@ -689,6 +689,11 @@
     opacity: 0;
     transform: translate(-100px, 100px) scale(0.1);
   }
+  @media screen and (max-width: 1268px) {
+    .space {
+      width: 60%;
+    }
+  }
   @media screen and (max-width: 968px) {
     .space {
       width: 80%;
@@ -706,7 +711,11 @@
     opacity: 1;
     transform: translate(0px, -50px) scale(1);
   }
-
+  @media screen and (max-width: 486px) {
+    .space-active {
+      transform: translate(0px, -100px) scale(1);
+    }
+  }
   .contain {
     transform: translate(50px, -60px);
     position: relative;
@@ -739,7 +748,7 @@
           font-family: var(--titre);
           font-size: clamp(1.4em, 2vw, 1.7em);
           color: var(--primary-color);
-          padding-bottom: 20px;
+          padding-bottom: 30px;
         }
       }
 
@@ -759,21 +768,23 @@
           select {
             width: 100%;
             border: none;
+            background: transparent;
             border-bottom: 3px solid var(--primary-color);
             color: var(--second-color);
-            font-size: 1em;
+            font-size: clamp(0.9em, 2vw, 1em);
             font-weight: 700;
             outline: none;
 
             &:focus {
               border: none;
               border-bottom: 3px solid var(--primary-color);
+              font-size: clamp(0.9em, 2vw, 1em);
             }
           }
 
           option {
             color: var(--primary-color);
-            font-size: 0.85em;
+            font-size: clamp(0.9em, 2vw, 1em);
             padding: 0;
           }
 
@@ -787,9 +798,9 @@
             background: none;
             border: none;
             border-bottom: 3px solid var(--primary-color);
-            font-size: 1em;
             font-weight: 500;
             outline: none;
+            font-size: clamp(0.9em, 2vw, 1em);
 
             &:focus {
               border: none;
@@ -803,6 +814,7 @@
           }
 
           span {
+            font-size: clamp(0.9em, 2vw, 1em);
             color: var(--second-color);
             position: absolute;
             top: 0;
@@ -847,6 +859,7 @@
 
           span {
             color: var(--second-color);
+            font-size: clamp(0.9em, 2vw, 1em);
             padding-bottom: 5px;
           }
 
@@ -883,7 +896,7 @@
 
           span {
             font-family: var(--titre);
-            font-size: 0.8em;
+            font-size: clamp(0.7em, 2vw, 0.8em);
             color: var(--primary-color);
             padding-inline-start: 10px;
           }
@@ -953,7 +966,7 @@
       }
 
       .small4 {
-        top: 21px;
+        top: 25px;
       }
 
       .small5 {
@@ -986,6 +999,11 @@
   }
   @media screen and (max-width: 698px) {
     .contain {
+      transform: translate(20px, -80px);
+    }
+  }
+  @media screen and (max-width: 486px) {
+    .contain {
       transform: translate(20px, -40px);
     }
   }
@@ -999,24 +1017,28 @@
     flex-direction: column;
 
     h2 {
-      padding-top: 7%;
+      padding-top: 15%;
       font-size: clamp(1.4em, 2vw, 1.7em);
     }
 
     .icono {
+      margin-top: 20px;
       font-size: 2em;
+
+      i {
+        margin-right: 15px;
+      }
     }
   }
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 1268px) {
   .component4 {
     margin-top: 200px;
-    background: red;
   }
 }
 
-@media screen and (max-width: 698px) {
+@media screen and (max-width: 1268px) {
   .component4 {
     flex-direction: column;
   }
@@ -1038,14 +1060,16 @@
   padding: 5px 20px 0px 70px;
   width: 55%;
   display: flex;
-  height: 350px;
+  height: auto;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 10px;
 
   .card-projet {
     transform: translateY(70px);
+    background-color: var(--second-color);
     padding: 20px;
-    height: 400px;
+    height: 350px;
     flex: 1;
     margin: 0 5px;
     transition: 0.2s ease-in-out;
@@ -1054,31 +1078,26 @@
     filter: brightness(110%) contrast(110%) grayscale(100%);
 
     &:nth-child(1) {
-      background: url(/img/deathstroke.jpg);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
     }
     &:nth-child(2) {
-      background: url(/img/deathstroke.jpg);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
     }
     &:nth-child(3) {
-      background: url(/img/deathstroke.jpg);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
     }
     &:nth-child(4) {
-      background: url(/img/deathstroke.jpg);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
     }
     &:nth-child(5) {
-      background: url(/img/deathstroke.jpg);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -1102,18 +1121,26 @@
       overflow: visible;
     }
   }
+  @media screen and (max-width: 1268px) {
+    .card-projet {
+      transform: translateY(40px);
+    }
+  }
+
   @media screen and (max-width: 768px) {
     .card-projet {
-      height: 300px;
+      transform: translateY(20px);
       margin: 0 2.5px;
+      min-width: 100px;
     }
   }
 
   /* Media query pour les écrans plus petits (max-width: 480px) */
   @media screen and (max-width: 480px) {
     .card-projet {
-      height: 200px;
+      height: 300px;
       margin: 0 2px;
+      flex-wrap: wrap;
     }
   }
   .card-projet.blur-card {
@@ -1130,8 +1157,24 @@
     flex: 10;
   }
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 1268px) {
+  .projets {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 968px) {
+  .projets {
+    width: 85%;
+    padding: 5px 20px 0px 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .projets {
     flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .projets {
+    padding: 5px 10px 0px 10px;
   }
 }
