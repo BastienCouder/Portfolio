@@ -968,6 +968,11 @@
   padding-top: 15%;
   font-size: clamp(1.4em, 2vw, 1.7em);
 }
+@media screen and (max-width: 1268px) {
+  .component4 .media h2 {
+    padding-top: 1%;
+  }
+}
 .component4 .media .icono {
   margin-top: 20px;
   font-size: 2em;
@@ -975,13 +980,18 @@
 .component4 .media .icono i {
   margin-right: 15px;
 }
+@media screen and (max-width: 1268px) {
+  .component4 .media {
+    padding-bottom: 50px;
+  }
+}
 
 @media screen and (max-width: 1268px) {
   .component4 {
     margin-top: 200px;
   }
 }
-@media screen and (max-width: 1268px) {
+@media screen and (max-width: 968px) {
   .component4 {
     flex-direction: column;
   }
