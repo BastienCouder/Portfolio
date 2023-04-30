@@ -681,6 +681,16 @@
   opacity: 0;
   transform: translate(-100px, 100px) scale(0.1);
 }
+@media screen and (max-width: 968px) {
+  .component4 .space {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 398px) {
+  .component4 .space {
+    width: 85%;
+  }
+}
 .component4 .space-active {
   transition: 0.5s ease-in-out;
   opacity: 1;
@@ -698,7 +708,7 @@
 .component4 .contain form {
   font-family: "Montserrat";
   font-weight: 700;
-  width: 32vw;
+  width: auto;
   height: auto;
   overflow: hidden;
   display: flex;
@@ -810,12 +820,13 @@
 }
 .component4 .contain form .formulaire .message textarea {
   resize: initial;
-  width: 100%;
+  width: 95%;
   padding: 5px 5px;
   border: none;
   border: 3px solid var(--primary-color);
   border-radius: 5px;
   color: var(--primary-color);
+  background: transparent;
   font-size: 0.9em;
   font-weight: 500;
   text-transform: capitalize;
@@ -920,6 +931,11 @@
 .component4 .contain form .scale {
   transform: scale(0.9);
 }
+@media screen and (max-width: 698px) {
+  .component4 .contain {
+    transform: translate(20px, -40px);
+  }
+}
 .component4 .media {
   font-family: var(--titre);
   font-weight: 700;
@@ -937,14 +953,15 @@
   font-size: 2em;
 }
 
-@media screen and (max-width: 1200px) {
-  .container {
-    width: 50%;
+@media screen and (max-width: 968px) {
+  .component4 {
+    margin-top: 200px;
+    background: red;
   }
 }
-@media screen and (max-width: 700px) {
-  .container {
-    width: 70%;
+@media screen and (max-width: 698px) {
+  .component4 {
+    flex-direction: column;
   }
 }
 .component5 {
@@ -965,15 +982,12 @@
   width: 55%;
   display: flex;
   height: 350px;
-  flex-wrap: nowrap;
   align-items: center;
   gap: 10px;
   /* Media query pour les écrans plus petits (max-width: 480px) */
 }
 .projets .card-projet {
   transform: translateY(70px);
-  background-position: center;
-  background-size: cover;
   padding: 20px;
   height: 400px;
   flex: 1;
@@ -983,24 +997,34 @@
   filter: brightness(110%) contrast(110%) grayscale(100%);
 }
 .projets .card-projet:nth-child(1) {
-  background: url(/img/chat.jpeg);
+  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .projets .card-projet:nth-child(2) {
-  background: url(/img/cry.jpeg);
+  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .projets .card-projet:nth-child(3) {
-  background: url(/img/muh.jpeg);
+  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .projets .card-projet:nth-child(4) {
-  background: url(/img/rig.jpeg);
+  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .projets .card-projet:nth-child(5) {
-  background: url(/img/stonk.jpeg);
+  background: url(/img/deathstroke.jpg);
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .projets .card-projet h2 {
   background-color: var(--second-color);
@@ -1023,8 +1047,6 @@
   .projets .card-projet {
     height: 300px;
     margin: 0 2.5px;
-    min-width: 200px;
-    flex-wrap: wrap;
   }
 }
 @media screen and (max-width: 480px) {
