@@ -479,6 +479,8 @@ const titres = document.querySelectorAll("h2");
 
 function addClasses(card) {
   card.classList.add("hover-card");
+  const titre = card.querySelector("h2");
+  titre.classList.add("hover-titre");
   cards.forEach((otherCard) => {
     if (otherCard !== card) {
       otherCard.classList.add("blur-card");
