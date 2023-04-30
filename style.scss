@@ -1007,42 +1007,60 @@
       transform: translate(20px, -40px);
     }
   }
-  .media {
-    font-family: var(--titre);
-    font-weight: 700;
+  .other-cubes {
     width: 70%;
+    position: relative;
     height: 60%;
     padding-left: 10%;
-    display: flex;
-    flex-direction: column;
 
-    h2 {
-      padding-top: 150px;
-      font-size: clamp(1.4em, 2vw, 1.7em);
-    }
-    @media screen and (max-width: 1268px) {
-      h2 {
-        padding-top: 0px;
-      }
-    }
-    @media screen and (max-width: 468px) {
-      h2 {
-        margin-top: -60px;
-        padding-top: 0px;
-      }
-    }
-    .icono {
-      margin-top: 20px;
-      font-size: 2em;
+    .cube {
+      position: absolute;
+      background-color: var(--second-color);
+      animation: moving 20s linear infinite;
 
-      i {
-        margin-right: 15px;
+      &:nth-child(1) {
+        width: clamp(110px, 20vw, 170px);
+        height: clamp(110px, 20vw, 170px);
+        top: 80%;
+        right: 25%;
+      }
+      @media screen and (max-width: 1268px) {
+        &:nth-child(1) {
+          top: 60%;
+          right: 40%;
+        }
+      }
+
+      &:nth-child(2) {
+        width: clamp(50px, 4vw, 90px);
+        height: clamp(50px, 4vw, 90px);
+        top: 70%;
+        left: 30%;
+      }
+      @media screen and (max-width: 1268px) {
+        &:nth-child(2) {
+          top: 1%;
+          right: 25%;
+        }
+      }
+
+      &:nth-child(3) {
+        width: clamp(30px, 4vw, 40px);
+        height: clamp(30px, 4vw, 40px);
+        top: 40%;
+        right: 15%;
+      }
+      @media screen and (max-width: 1268px) {
+        &:nth-child(3) {
+          top: 25%;
+          right: 25%;
+        }
       }
     }
   }
-  @media screen and (max-width: 1268px) {
-    .media {
-      padding-bottom: 50px;
+  @media screen and (max-width: 968px) {
+    .other-cubes {
+      display: none;
     }
   }
 }
@@ -1164,6 +1182,11 @@
     filter: none;
     transition: 0.5s ease-in-out;
     flex: 10;
+  }
+  @media screen and (max-width: 968px) {
+    .hover-card {
+      flex: 5;
+    }
   }
 }
 @media screen and (max-width: 1268px) {

@@ -73,10 +73,12 @@
       </div>
       <div class="bloc2">
         <div class="card">
-            <img src="" alt="">
-            <p></p>
      <a href="cv/CV.html" target="_blank"><button class="but">Voir mon CV </button></a>
      <button>Contactez-moi</button>
+     <div class="icono">
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-github"></i>
+    </div>
 
         </div>
       </div>
@@ -352,12 +354,10 @@
           </form>
         </div>
       </div>
-      <div class="media">
-        <h2>Mes réseaux</h2>
-        <div class="icono">
-          <i class="fa-brands fa-linkedin"></i>
-          <i class="fa-brands fa-github"></i>
-        </div>
+      <div class="other-cubes">
+       <div class="cube"></div>
+       <div class="cube"></div>
+       <div class="cube"></div>
       </div>
     </div>
 
@@ -376,9 +376,9 @@ let loader = document.querySelector(".loading-container");
 let root = document.querySelector(":root");
 
 cubes.forEach((cube) => {
-  let a = Math.random() * (100 - -100) + -100;
+  let a = Math.random() * (80 - -80) + -80;
   a = parseInt(a);
-  let b = Math.random() * (100 - -100) + -100;
+  let b = Math.random() * (80 - -80) + -80;
   b = parseInt(b);
   console.log(a, b);
   cube.style.setProperty(`--translateX`, `${a}%`);
