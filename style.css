@@ -426,7 +426,7 @@
 }
 @media screen and (max-width: 568px) {
   .txt h2 {
-    font-size: 2em;
+    font-size: 1.6em;
   }
   .txt p {
     font-size: 0.85em;
@@ -479,8 +479,8 @@
 }
 .bloc2 .card::after {
   content: "";
-  width: clamp(60px, 4vw, 80px);
-  height: clamp(60px, 4vw, 80px);
+  width: clamp(50px, 4vw, 80px);
+  height: clamp(50px, 4vw, 80px);
   background-color: var(--second-color);
   top: 50px;
   right: -30px;
