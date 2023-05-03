@@ -1,34 +1,71 @@
+#custom-cursor {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 6px double var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#custom-cursor span {
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.project-description {
+  height: 100vh;
+  z-index: 50;
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  background-color: rgb(140, 36, 36);
+}
+
 .form-validate {
-  transform: translateY(-100vh);
+  transform: translate(-50%, -50vh);
   z-index: 5;
   position: fixed;
+  left: 50%;
   display: flex;
-  place-content: center;
+  justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 70%;
-  background-color: #2d407f;
+  width: 30%;
+  height: 7%;
+  background-color: var(--white);
+  box-shadow: -3px -3px 15px var(--box-shadow), 3px 3px 15px var(--box-shadow);
+  transition: 0.7s ease-in-out;
+}
+.form-validate p {
+  font-family: var(--titre);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: clamp(0.8em, 2vw, 1.1em);
+}
+.form-validate p i {
+  color: var(--second-color);
 }
 
 .active-form-validate {
   transition: 0.7s ease-in-out;
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
 .home {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
-  position: relative;
-  place-content: center;
-  align-items: center;
 }
 
 .loading-container {
   font-family: "Montserrat";
   font-weight: 700;
   z-index: 3;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   text-align: center;
   display: flex;
@@ -37,7 +74,6 @@
   color: var(--second-color);
   background-color: var(--white);
   position: absolute;
-  margin: 0 32px;
   opacity: 1;
 }
 .loading-container:before {
@@ -182,8 +218,9 @@
 }
 
 .container {
-  width: 90vw;
-  height: 20vh;
+  background-color: aqua;
+  width: 100%;
+  height: 0;
   display: flex;
   justify-content: center;
   position: relative;
@@ -193,18 +230,22 @@
 }
 .container h1 {
   width: auto;
+  margin-top: 40vh;
+  margin-right: clamp(35px, 6vw, 20px);
   font-size: 4.2em;
   line-height: clamp(35px, 6vw, 65px);
   color: var(--primary-color);
 }
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 1268px) {
   .container h1 {
     font-size: 3.5em;
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 768px) {
   .container h1 {
     font-size: 3.1em;
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 568px) {
@@ -497,7 +538,6 @@
 .bloc2 .card button {
   font-family: "Montserrat";
   font-weight: 700;
-  cursor: pointer;
   display: flex;
   align-items: center;
   width: clamp(100px, 50%, 180px);
@@ -614,7 +654,6 @@
   width: 1080px;
 }
 .slider .slide-track .card {
-  cursor: default;
   position: relative;
   min-width: 200px;
   min-height: 180px;
@@ -956,8 +995,9 @@
   margin-top: 0px;
   padding: 15px 0px;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.15s;
+}
+.component4 .contain form .formulaire .button button:hover {
+  background-color: var(--second-color);
 }
 .component4 .contain form .placeholder {
   font-size: clamp(0.9em, 2vw, 1em);
@@ -1072,11 +1112,38 @@
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
+.mini-cube {
+  width: 450px;
+  height: 200px;
+  position: relative;
+}
+.mini-cube .cube {
+  position: absolute;
+  background-color: var(--second-color);
+  animation: moving 20s linear infinite;
+}
+.mini-cube .cube:nth-child(1) {
+  width: clamp(50px, 20vw, 100px);
+  height: clamp(50px, 20vw, 100px);
+  top: 20%;
+  left: 5%;
+}
+.mini-cube .cube:nth-child(2) {
+  width: clamp(30px, 20vw, 50px);
+  height: clamp(30px, 20vw, 50px);
+  top: 5%;
+  left: 55%;
+}
+
+@media screen and (max-width: 1268px) {
+  .mini-cube {
+    display: none;
+  }
+}
 .projets {
   border: 5px solid var(--primary-color);
   border-right: none;
@@ -1089,6 +1156,7 @@
   gap: 10px;
 }
 .projets .card-projet {
+  position: relative;
   transform: translateY(50px);
   background-color: var(--second-color);
   padding: 20px;
@@ -1134,6 +1202,34 @@
   color: var(--white);
 }
 .projets .card-projet .hover-titre {
+  transition: 0.7s ease-in-out;
+  transform: translate(0, 0);
+  opacity: 1;
+  overflow: visible;
+}
+.projets .card-projet button {
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+  transform: translate(-100px, 0px);
+  position: absolute;
+  bottom: 20px;
+  left: 3px;
+  font-family: "Montserrat";
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  margin-top: 20px;
+  font-size: clamp(0.8em, 3vw, 1.05em);
+  padding: 10px 15px;
+  background: transparent;
+  margin-left: 20px;
+  border: 2px solid var(--primary-color);
+}
+.projets .card-projet button:hover {
+  background-color: var(--second-color);
+}
+.projets .card-projet .hover-button {
   transition: 0.7s ease-in-out;
   transform: translate(0, 0);
   opacity: 1;
