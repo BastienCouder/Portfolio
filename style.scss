@@ -17,14 +17,235 @@
     border-radius: 50%;
   }
 }
+@media screen and (max-width: 768px) {
+  #custom-cursor {
+    display: none;
+  }
+}
+
+.home {
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+}
+
+.home-project {
+  z-index: 15;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  animation: loadproject 3.6s ease-in-out;
+  transform: translateY(-150vh);
+}
+
+.loading-project {
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  position: absolute;
+  opacity: 1;
+
+  img {
+    width: 150px;
+    height: auto;
+  }
+}
+
+.loading-cube {
+  background-color: var(--primary-color);
+  width: 100vw;
+  top: 0;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+}
 
 .project-description {
-  height: 100vh;
+  height: auto;
   z-index: 50;
   width: 100%;
   margin: auto;
-  position: fixed;
-  background-color: rgb(140, 36, 36);
+  background-color: var(--white);
+
+  .header-project {
+    width: 100%;
+    height: 20vh;
+    position: fixed;
+    display: flex;
+    z-index: 6;
+    justify-content: space-between;
+    padding-left: 4em;
+
+    &::after {
+      content: "";
+      width: 30%;
+      height: 70%;
+      border: 6px solid var(--primary-color);
+      border-top: none;
+      border-right: none;
+    }
+
+    img {
+      margin-top: 3em;
+      height: 50px;
+      width: auto;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .header-project {
+      position: relative;
+      height: 12vh;
+
+      img {
+        margin-top: 1em;
+      }
+    }
+  }
+  .contenu {
+    position: relative;
+    color: var(--primary-color);
+    padding-top: 20vh;
+    display: flex;
+    overflow-y: auto;
+  }
+  @media screen and (max-width: 768px) {
+    .contenu {
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .para {
+    width: 55vw;
+    top: calc(10vh + 5vh);
+    right: 0;
+    height: 85vh;
+    position: fixed;
+
+    h3 {
+      color: var(--second-color);
+      font-size: clamp(2em, 2vw, 2.5em);
+      font-family: var(--titre);
+      font-weight: 700;
+    }
+
+    p {
+      margin-block: 30px;
+      padding-right: 200px;
+      font-size: clamp(1em, 2vw, 1.2em);
+    }
+    @media screen and (max-width: 1068px) {
+      p {
+        padding-right: 50px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      p {
+        padding-right: 0;
+      }
+    }
+    button {
+      font-family: "Montserrat";
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      width: clamp(70px, 50%, 120px);
+      margin-top: 20px;
+      font-size: clamp(0.8em, 3vw, 1.05em);
+      padding: 10px 15px;
+      background: transparent;
+      border: 3px solid var(--second-color);
+
+      &:hover {
+        background-color: var(--second-color);
+        color: var(--white);
+      }
+    }
+    .cube {
+      position: absolute;
+      background-color: var(--second-color);
+      animation: moving 20s linear infinite;
+    }
+    .cube1 {
+      width: clamp(20px, 6vw, 40px);
+      height: clamp(20px, 6vw, 40px);
+      bottom: 5%;
+      right: 80%;
+    }
+    .cube2 {
+      width: clamp(90px, 6vw, 110px);
+      height: clamp(90px, 6vw, 110px);
+      bottom: 15%;
+      right: 20%;
+    }
+    @media screen and (max-width: 1268px) {
+      .cube {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .para {
+      position: relative;
+      margin: auto;
+      width: 90vw;
+      top: 0;
+      height: auto;
+    }
+  }
+
+  .images {
+    border: 6px solid var(--primary-color);
+    border-left: none;
+    height: auto;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 6em;
+    img {
+      transform: translateY(4em);
+      max-height: 500px;
+      max-width: 90%;
+      margin: auto;
+      box-shadow: 5px 5px 15px var(--box-shadow),
+        -5px -5px 15px var(--box-shadow);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .images {
+      margin-block: 40px 20px;
+      width: 85vw;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      flex-direction: row;
+
+      img {
+        transform: translateY(0em);
+
+        max-height: 400px;
+      }
+    }
+  }
+}
+
+@keyframes loadproject {
+  0% {
+    transform: translateY(-150vh);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-150vh);
+  }
 }
 
 .form-validate {
@@ -1223,7 +1444,7 @@
 
   .card-projet {
     position: relative;
-    transform: translateY(50px);
+    transform: translateY(10px);
     background-color: var(--second-color);
     padding: 20px;
     height: 350px;
@@ -1235,6 +1456,7 @@
     filter: brightness(110%) contrast(110%) grayscale(100%);
 
     &:nth-child(1) {
+      background: url("/img/logo\ cheer\ hope\ \ \(1\).png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -1267,10 +1489,10 @@
       transform: translate(-100px, 0px);
       transition: 0.3s ease-in-out;
       opacity: 0;
-      color: var(--white);
+      color: var(--primary-color);
     }
     .hover-titre {
-      transition: 0.7s ease-in-out;
+      transition: 0.5s ease-in-out;
       transform: translate(0, 0);
       opacity: 1;
       overflow: visible;
@@ -1296,11 +1518,12 @@
       border: 2px solid var(--primary-color);
 
       &:hover {
-        background-color: var(--second-color);
+        background-color: var(--primary-color);
+        color: var(--white);
       }
     }
     .hover-button {
-      transition: 0.7s ease-in-out;
+      transition: 0.5s ease-in-out;
       transform: translate(0, 0);
       opacity: 1;
       overflow: visible;
