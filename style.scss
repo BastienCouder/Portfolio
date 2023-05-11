@@ -4,18 +4,12 @@
   height: 25px;
   pointer-events: none;
   z-index: 9999;
+  opacity: 0;
   transform: translate(-50%, -50%) rotate(45deg);
   border: 6px double var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
-
-  span {
-    background-color: var(--primary-color);
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-  }
 }
 @media screen and (max-width: 768px) {
   #custom-cursor {
@@ -23,10 +17,84 @@
   }
 }
 
+@keyframes loading {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.loading-container {
+  font-family: "Montserrat";
+  font-weight: 700;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--second-color);
+  background-color: var(--white);
+  position: absolute;
+  opacity: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    background-color: var(--second-color);
+    bottom: 0;
+    left: 0;
+    animation: movingLine 2.4s infinite ease-in-out;
+  }
+}
+.loading-cubes {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.loading-cubes div {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 15px;
+  left: 15px;
+  contain: "";
+  background: var(--primary-color);
+  animation: loading 1.4s linear infinite;
+  animation-delay: -0.45s;
+}
+.loading-cubes div:nth-child(2) {
+  top: 15px;
+  left: 120px;
+  background: var(--second-color);
+  animation-delay: -0.3s;
+}
+.loading-cubes div:nth-child(3) {
+  top: 120px;
+  left: 15px;
+  background: var(--third-color);
+  animation-delay: 0s;
+}
+.loading-cubes div:nth-child(4) {
+  top: 120px;
+  left: 120px;
+  background: var(--primary-color);
+  animation-delay: -0.15s;
+}
+
 .home {
   z-index: 5;
   width: 100%;
   height: 100vh;
+  position: relative;
 }
 
 .home-project {
@@ -127,10 +195,27 @@
     position: fixed;
 
     h3 {
+      z-index: 3;
       color: var(--second-color);
       font-size: clamp(2em, 2vw, 2.5em);
       font-family: var(--titre);
       font-weight: 700;
+      width: 50%;
+      background-color: brown;
+      height: auto;
+
+      &:hover {
+        background-color: black;
+        cursor: pointer;
+      }
+      &::before {
+        transform: translateY(2.4rem);
+        position: absolute;
+        content: "";
+        width: 2%;
+        height: 4px;
+        background-color: black;
+      }
     }
 
     p {
@@ -284,33 +369,6 @@
   display: flex;
 }
 
-.loading-container {
-  font-family: "Montserrat";
-  font-weight: 700;
-  z-index: 3;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--second-color);
-  background-color: var(--white);
-  position: absolute;
-  opacity: 1;
-
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 15px;
-    background-color: var(--second-color);
-    bottom: 0;
-    left: 0;
-    animation: movingLine 2.4s infinite ease-in-out;
-  }
-}
-
 @keyframes movingLine {
   0% {
     opacity: 0;
@@ -410,16 +468,18 @@
 }
 
 .container {
-  background-color: aqua;
   width: 100%;
   height: 0;
   display: flex;
-  justify-content: center;
+  margin-inline-start: 22%;
   position: relative;
   z-index: 2;
   font-family: "Montserrat";
   font-weight: 700;
 
+  @media screen and (max-width: 468px) {
+    margin-inline-start: 10%;
+  }
   h1 {
     width: auto;
     margin-top: 40vh;

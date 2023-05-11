@@ -5,19 +5,9 @@ window.addEventListener("beforeunload", function (event) {
     window.scrollTo(0, 0);
   }
 });
-
 const customCursor = document.getElementById("custom-cursor");
 
-document.addEventListener("mouseover", () => {
-  customCursor.style.display = "block";
-  customCursor.style.opacity = "1";
-});
-
-document.addEventListener("mouseout", () => {
-  customCursor.style.display = "none";
-});
-
-document.addEventListener("mousemove", (e) => {
+window.addEventListener("mousemove", (e) => {
   customCursor.style.left = e.clientX + "px";
   customCursor.style.top = e.clientY + "px";
 });
@@ -33,10 +23,13 @@ let root = document.querySelector(":root");
 
 buttons.forEach((button) => {
   button.addEventListener("mouseenter", () => {
-    customCursor.style.opacity = "0"; // Ajout de l'effet de scale
+    const cursor = document.querySelector("#custom-cursor");
+    cursor.style.transform = " translate(-50%, -50%) scale(0.6) rotate(45deg) "; // Ajout de l'effet de scale
   });
   button.addEventListener("mouseleave", () => {
-    customCursor.style.opacity = "1"; // Suppression de l'effet de scale
+    const cursor = document.querySelector("#custom-cursor");
+    cursor.classList.remove("custom-cursor-active");
+    cursor.style.transform = " translate(-50%, -50%) scale(1) rotate(45deg)"; // Suppression de l'effet de scale
   });
 });
 
@@ -44,7 +37,6 @@ cubes.forEach((cube) => {
   let a = Math.random() * (70 - -70) + -70;
   a = parseInt(a);
   let b = Math.random() * (70 - -70) + -70;
-  b = parseInt(b);
   console.log(a, b);
   cube.style.setProperty(`--translateX`, `${a}%`);
   cube.style.setProperty(`--translateY`, `${b}%`);
@@ -53,6 +45,18 @@ cubes.forEach((cube) => {
 setTimeout(() => {
   line.classList.add("active-line");
 }, 3500);
+
+function bloquerScroll(duree) {
+  // Désactive le défilement
+  document.body.style.overflow = "hidden";
+
+  // Réactive le défilement après la durée spécifiée
+  setTimeout(function () {
+    document.body.style.overflowY = "auto";
+  }, duree);
+}
+
+bloquerScroll(4700);
 
 function blockScroll() {
   stopScroll = false;
@@ -85,21 +89,21 @@ new Typewriter(textAnim, {
   .typeString(
     "<br><strong style='font-size: 0.7em; color:#cdbab1;'>SUR MON PORTFOLIO</strong>"
   )
-
   .start();
 window.addEventListener("scroll", () => {
   console.log(window.scrollY);
 
-  if (window.scrollY > 150) {
+  if (window.scrollY > 10) {
     const about = document.querySelector("#about");
     about.classList.add("active-about");
+    console.log("click");
   }
 });
 
 window.addEventListener("scroll", () => {
   console.log(window.scrollY);
 
-  if (window.scrollY > 1150) {
+  if (window.scrollY > 20) {
     const formu = document.querySelector("#formu");
     formu.classList.add("space-active");
   }
@@ -145,7 +149,6 @@ cards.forEach((card) => {
   card.addEventListener("mouseleave", () => removeClasses(card));
   card.addEventListener("click", () => activateCard(card));
 });
-
 //Déclarations
 const form = document.querySelector("#form");
 const name = document.querySelector("#name");
