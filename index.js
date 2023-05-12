@@ -27,9 +27,7 @@ let textAnim = document.querySelector("h1");
 let line = document.querySelector(".line");
 let border = document.querySelector(".bloc2");
 let buttons = document.querySelectorAll("button");
-
 let cubes = document.querySelectorAll(".cube");
-let root = document.querySelector(":root");
 
 buttons.forEach((button) => {
   button.addEventListener("mouseenter", () => {
@@ -87,6 +85,7 @@ new Typewriter(textAnim, {
   )
 
   .start();
+
 window.addEventListener("scroll", () => {
   console.log(window.scrollY);
 
@@ -94,14 +93,33 @@ window.addEventListener("scroll", () => {
     const about = document.querySelector("#about");
     about.classList.add("active-about");
   }
-});
 
-window.addEventListener("scroll", () => {
-  console.log(window.scrollY);
+  if (window.scrollY > 500) {
+    const cardSlider = document.querySelectorAll(".card");
+    const delay = 100;
 
-  if (window.scrollY > 1150) {
+    for (let i = 0; i < cardSlider.length; i++) {
+      setTimeout(function () {
+        cardSlider[i].style.opacity = "1";
+      }, i * delay);
+    }
+  }
+
+  if (window.scrollY > 1250) {
     const formu = document.querySelector("#formu");
     formu.classList.add("space-active");
+  }
+
+  if (window.scrollY > 1050) {
+    const cardProjects = document.querySelectorAll(".card-projet");
+    const delay = 200;
+
+    for (let i = 0; i < cardProjects.length; i++) {
+      setTimeout(function () {
+        cardProjects[i].style.transform = "translateY(10px)";
+        cardProjects[i].style.opacity = "1";
+      }, i * delay);
+    }
   }
 });
 

@@ -201,21 +201,7 @@
       font-family: var(--titre);
       font-weight: 700;
       width: 50%;
-      background-color: brown;
       height: auto;
-
-      &:hover {
-        background-color: black;
-        cursor: pointer;
-      }
-      &::before {
-        transform: translateY(2.4rem);
-        position: absolute;
-        content: "";
-        width: 2%;
-        height: 4px;
-        background-color: black;
-      }
     }
 
     p {
@@ -471,7 +457,7 @@
   width: 100%;
   height: 0;
   display: flex;
-  margin-inline-start: 22%;
+  margin-inline-start: 25%;
   position: relative;
   z-index: 2;
   font-family: "Montserrat";
@@ -945,6 +931,8 @@
     width: calc(270px * 4);
 
     .card {
+      opacity: 0;
+      transition: 0.3s ease-in-out;
       position: relative;
       min-width: 200px;
       min-height: 180px;
@@ -1081,7 +1069,7 @@
   }
 
   .space-active {
-    transition: 0.5s ease-in-out;
+    transition: 0.7s ease-in-out;
     opacity: 1;
     transform: translate(0px, -50px) scale(1);
   }
@@ -1504,7 +1492,8 @@
 
   .card-projet {
     position: relative;
-    transform: translateY(10px);
+    transform: translateY(200px);
+    opacity: 0;
     background-color: var(--second-color);
     padding: 20px;
     height: 350px;

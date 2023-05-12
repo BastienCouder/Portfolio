@@ -200,20 +200,7 @@
   font-family: var(--titre);
   font-weight: 700;
   width: 50%;
-  background-color: brown;
   height: auto;
-}
-.project-description .para h3:hover {
-  background-color: black;
-  cursor: pointer;
-}
-.project-description .para h3::before {
-  transform: translateY(2.4rem);
-  position: absolute;
-  content: "";
-  width: 2%;
-  height: 4px;
-  background-color: black;
 }
 .project-description .para p {
   margin-block: 30px;
@@ -489,8 +476,8 @@
   width: 100%;
   height: 0;
   display: flex;
-  -webkit-margin-start: 22%;
-          margin-inline-start: 22%;
+  -webkit-margin-start: 25%;
+          margin-inline-start: 25%;
   position: relative;
   z-index: 2;
   font-family: "Montserrat";
@@ -928,6 +915,8 @@
   width: 1080px;
 }
 .slider .slide-track .card {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
   position: relative;
   min-width: 200px;
   min-height: 180px;
@@ -1058,7 +1047,7 @@
   }
 }
 .component4 .space-active {
-  transition: 0.5s ease-in-out;
+  transition: 0.7s ease-in-out;
   opacity: 1;
   transform: translate(0px, -50px) scale(1);
 }
@@ -1431,7 +1420,8 @@
 }
 .projets .card-projet {
   position: relative;
-  transform: translateY(10px);
+  transform: translateY(200px);
+  opacity: 0;
   background-color: var(--second-color);
   padding: 20px;
   height: 350px;
